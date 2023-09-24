@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>James Vang Tip Calc</title>
+
+<script>
+// calculate the tips
+function calculatetip() {
+var totalbill = document.getElementById("bill").value;
+var tipamount = document.getElementById("tip amount").value;
+
+// tip math
+var total = (totalbill * tipamount);
+
+document.getElementById("totaltip");
+document.getElementById("tip").innerHTML = total;
+
+// show tip
+
+document.getElementById("totaltip")
+
+// call funtion
+document.getElementById("calculation").onclick = 
+function() {
+    calculatetip();
+}
+};
+
+</script>
+
+</head>
+<body>
+    <div id="calculator">
+    <h1>Tip Calculator</h1>
+    <p>Total Cost</p>
+    $ <input id="bill" type="text">
+    <p>Select Tip Amount</p>
+    <select id="tip amount">
+    <option value=".1">10%</option>
+    <option value=".15">15%</option>
+    <option value=".2">20%</option>
+</select>
+
+<button type="button">Calculate</button>
+
+<div id="totaltip">
+    $<span id="tip">0.00</span>
+</div>
+</div>
+</body>
+</html>
