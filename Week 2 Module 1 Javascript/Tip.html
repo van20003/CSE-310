@@ -1,53 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>James Vang Tip Calc</title>
-
-<script>
-// calculate the tips
-function calculatetip() {
-var totalbill = document.getElementById("bill").value;
-var tipamount = document.getElementById("tip amount").value;
-
-// tip math
-var total = (totalbill * tipamount);
-
-document.getElementById("totaltip");
-document.getElementById("tip").innerHTML = total;
-
-// show tip
-
-document.getElementById("totaltip")
-
-// call funtion
-document.getElementById("calculation").onclick = 
-function() {
-    calculatetip();
-}
-};
-
-</script>
-
+<meta charset="UTF-8">
+<title>Tip Calculator</title>
 </head>
+
 <body>
-    <div id="calculator">
-    <h1>Tip Calculator</h1>
-    <p>Total Cost</p>
-    $ <input id="bill" type="text">
-    <p>Select Tip Amount</p>
-    <select id="tip amount">
-    <option value=".1">10%</option>
-    <option value=".15">15%</option>
-    <option value=".2">20%</option>
+<div id="calculator">
+<h1>Tip Calculator</h1>
+<p>Total Cost</p>
+$<input id="bill" type="text">
+<p>Select Tip Amount</p>
+<select id="tipAmount">
+<option value="0.1">10%</option>
+<option value="0.15">15%</option>
+<option value="0.20">20%</option>
+<option value="0.30">30%</option>
 </select>
 
-<button type="button">Calculate</button>
+ <button type="button" id="calculateButton">Calculate IT!</button>
 
-<div id="totaltip">
-    $<span id="tip">0.00</span>
+<div id="totalTip">
+ $<span id="tip">0.00</span>
 </div>
 </div>
+
+<script>
+
+// Get values of Total Cost and Tip Percent
+
+function calculateTip() {
+var totalBill = parseFloat(document.getElementById("bill").value);
+var tipAmount = parseFloat(document.getElementById("tipAmount").value);
+            
+// tip math
+
+var total = totalBill * tipAmount;
+
+// display tip
+
+document.getElementById("tip").innerHTML = total.toFixed(2);
+        }
+
+// attach event listener to the button
+
+document.getElementById("calculateButton").onclick = function () {
+calculateTip();
+};
+</script>
+
 </body>
+
 </html>
